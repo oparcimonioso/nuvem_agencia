@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuvem - Agência de Viagens</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho com navegação -->
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">Nuvem</a>
+        <!-- Botão do menu com atributos de acessibilidade -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#buscar">Buscar</a></li>
+            <li class="nav-item"><a class="nav-link" href="#promocoes">Promoções</a></li>
+            <li class="nav-item"><a class="nav-link" href="#viagens">Destinos</a></li>
+            <li class="nav-item">
+              <!-- Removido atributo duplicado "href". -->
+              <a href="login.html" class="btn btn-custom">
+                <img src="imagens/icons8-male-user-48.png" alt="Ícone de usuário"> Entre ou Cadastre-se
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <!-- Seção do Carrossel -->
+    <section id="inicio" class="container-fluid">
+      <div class="container my-4">
+        <div class="row">
+          <div class="col-12">
+            <div id="carouselExemplo" class="carousel slide" data-bs-ride="carousel">
+              <!-- Indicadores -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExemplo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExemplo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExemplo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+
+              <!-- Itens do Carrossel com container ratio 16:9 -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="ratio ratio-16x9">
+                    <img src="imagens/morro_de_sao_paulo.jpg" class="d-block w-100" alt="Morro de São Paulo">
+                  </div>
+                  <div class="carousel-caption text-start">
+                    <h1 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Morro de São Paulo (BA)</h1>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="ratio ratio-16x9">
+                    <img src="imagens/canoa_quebrada.jpg" class="d-block w-100" alt="Canoa Quebrada">
+                  </div>
+                  <div class="carousel-caption text-start">
+                    <h1 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Canoa Quebrada (CE)</h1>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="ratio ratio-16x9">
+                    <img src="imagens/ilha_de_boipeba.jpeg" class="d-block w-100" alt="Ilha de Boipeba">
+                  </div>
+                  <div class="carousel-caption text-start">
+                    <h1 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Ilha de Boipeba (BA)</h1>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controles -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExemplo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExemplo" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Buscar -->
+    <section id="buscar" class="container-fluid text-center my-5 custom-section">
+      <h1 style="color: white;">Viaje para os principais pontos turísticos do Nordeste com o melhor custo benefício</h1>
+      <div class="container my-5">
+        <div class="card">
+          <div class="card-body">
+            <!-- Abas para selecionar o tipo de viagem -->
+            <div class="d-flex gap-2 mb-4">
+              <button type="button" class="btn btn-primary active" data-form="ida">Ida</button>
+              <button type="button" class="btn btn-outline-primary" data-form="ida-volta">Ida e Volta</button>
+            </div>
+
+            <!-- Agrupando ambos os formulários dentro do card para manter a consistência semântica -->
+            <div id="form-ida" class="formulario-viagem">
+              <form method="get" action="#">
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label for="origem" class="form-label">Origem</label>
+                    <input type="text" class="form-control" id="origem" placeholder="De onde você vai?">
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="destino" class="form-label">Destino</label>
+                    <input type="text" class="form-control" id="destino" placeholder="Para onde você vai?">
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="data" class="form-label">Data da Viagem</label>
+                    <input type="date" class="form-control" id="data">
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label">Viajantes</label>
+                    <div class="input-group">
+                      <span class="input-group-text">Adultos</span>
+                      <input type="number" class="form-control" min="1" value="1" aria-label="Número de adultos">
+                      <span class="input-group-text">Crianças</span>
+                      <input type="number" class="form-control" min="0" value="0" aria-label="Número de crianças">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-100">
+                      <i class="bi bi-search me-2"></i>Buscar Passagens
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div id="form-ida-volta" class="formulario-viagem" style="display: none;">
+              <form method="get" action="#">
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label for="origem-volta" class="form-label">Origem</label>
+                    <input type="text" class="form-control" id="origem-volta" required>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="destino-volta" class="form-label">Destino</label>
+                    <input type="text" class="form-control" id="destino-volta" required>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="data-ida-volta" class="form-label">Data da Ida</label>
+                    <input type="date" class="form-control" id="data-ida-volta" required>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="data-volta" class="form-label">Data da Volta</label>
+                    <input type="date" class="form-control" id="data-volta" required>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label">Viajantes</label>
+                    <div class="input-group">
+                      <span class="input-group-text">Adultos</span>
+                      <input type="number" class="form-control" min="1" value="1">
+                      <span class="input-group-text">Crianças</span>
+                      <input type="number" class="form-control" min="0" value="0">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-100">Buscar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Promoções -->
+    <section id="promocoes" class="container my-5 custom-section">
+      <div class="row mb-4 text-center">
+        <div class="col-12 d-flex flex-column align-items-center">
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="imagens/icons8-promoção-48.png" alt="Promoções" width="30" class="me-2">
+            <h3 style="color: white;" class="m-0">Promoções</h3>
+          </div>
+          <h2 style="color: white;" class="mt-2">Ofertas Imperdíveis para você viajar mais e pagar menos!</h2>
+        </div>
+      </div>
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0">
+            <div class="card-img-container">
+              <img src="imagens/jericoacoara.jpg" class="card-img" alt="Jericoacoara (CE)">
+            </div>
+            <div class="card-body d-flex flex-column h-100">
+              <span class="badge text-bg-secondary align-self-start">Só Ida</span>
+              <p class="card-text fw-bold">Jericoacoara (CE)</p>
+              <p class="card-text">15 fev 2025</p>
+              <div class="mt-auto">
+                <p class="card-text small mb-0">A partir de</p>
+                <p class="card-text fw-bold">R$ 299</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Cartões de promoções adicionais -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0">
+            <div class="card-img-container">
+              <img src="imagens/porto_de_galinhas.jpg" class="card-img" alt="Porto de Galinhas">
+            </div>
+            <div class="card-body d-flex flex-column h-100">
+              <span class="badge text-bg-secondary align-self-start">Ida e Volta</span>
+              <p class="card-text fw-bold">Porto de Galinhas (PE)</p>
+              <div class="d-flex flex-column" style="gap: 2px">
+                <p class="card-text m-0">15 fev 2025</p>
+                <p class="card-text m-0">16 fev 2025</p>
+              </div>
+              <div class="d-grid mt-auto">
+                <p class="card-text small mb-0">A partir de</p>
+                <p class="card-text fw-bold">R$ 79</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0">
+            <div class="card-img-container">
+              <img src="imagens/maragogi.jpg" class="card-img" alt="Maragogi">
+            </div>
+            <div class="card-body d-flex flex-column h-100">
+              <span class="badge text-bg-secondary align-self-start">Só Ida</span>
+              <p class="card-text fw-bold">Maragogi (AL)</p>
+              <p class="card-text">7 mar 2025</p>
+              <div class="mt-auto">
+                <p class="card-text small mb-0">A partir de</p>
+                <p class="card-text fw-bold">R$ 99</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0">
+            <div class="card-img-container">
+              <img src="imagens/lencois-maranhenses.jpg" class="card-img" alt="Lençóis Maranhenses">
+            </div>
+            <div class="card-body d-flex flex-column h-100">
+              <span class="badge text-bg-secondary align-self-start">Ida e Volta</span>
+              <p class="card-text fw-bold">Lençóis Maranhenses (MA)</p>
+              <div class="d-flex flex-column" style="gap: 2px">
+                <p class="card-text m-0">7 mar 2025</p>
+                <p class="card-text m-0">16 mar 2025</p>
+              </div>
+              <div class="d-grid mt-auto">
+                <p class="card-text small mb-0">A partir de</p>
+                <p class="card-text fw-bold">R$ 799</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0">
+            <div class="card-img-container">
+              <img src="imagens/chapada_diamantina.jpg" class="card-img" alt="Chapada Diamantina">
+            </div>
+            <div class="card-body d-flex flex-column h-100">
+              <span class="badge text-bg-secondary align-self-start">Só Ida</span>
+              <p class="card-text fw-bold">Chapada Diamantina (BA)</p>
+              <p class="card-text">7 mar 2025</p>
+              <div class="mt-auto">
+                <p class="card-text small mb-0">A partir de</p>
+                <p class="card-text fw-bold">R$ 599</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Viagens -->
+    <section id="viagens" class="container my-5 custom-section">
+      <h1 style="color: white;" class="text-center">Escolha seu destino</h1>
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/jericoacoara.jpg" class="card-img" alt="Jericoacoara (CE)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Jericoacoara (CE)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Outros destinos -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/porto_de_galinhas.jpg" class="card-img" alt="Porto de Galinhas (PE)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Porto de Galinhas (PE)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/maragogi.jpg" class="card-img" alt="Maragogi (AL)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Maragogi (AL)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/lencois-maranhenses.jpg" class="card-img" alt="Lençóis Maranhenses (MA)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Lençóis Maranhenses (MA)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/chapada_diamantina.jpg" class="card-img" alt="Chapada Diamantina (BA)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Chapada Diamantina (BA)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Segunda linha de destinos -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/praia_de_pipa.jpg" class="card-img" alt="Praia de Pipa (RN)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Praia de Pipa (RN)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/morro_de_sao_paulo.jpg" class="card-img" alt="Morro de São Paulo (BA)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Morro de São Paulo (BA)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/canoa_quebrada.jpg" class="card-img" alt="Canoa Quebrada (CE)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Canoa Quebrada (CE)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/ilha_de_boipeba.jpeg" class="card-img" alt="Ilha de Boipeba (BA)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Ilha de Boipeba (BA)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card h-100 border-0 text-center">
+            <div class="card-img-container">
+              <img src="imagens/sao_miguel_do_gostoso.jpg" class="card-img" alt="São Miguel do Gostoso (RN)">
+            </div>
+            <div class="card-body">
+              <p class="card-text">São Miguel do Gostoso (RN)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-4 text-center text-md-start">
+          <h5 class="mb-3">Nuvem Viagens</h5>
+          <p class="small">Sua agência especializada em destinos nordestinos. Economize até 40% na sua próxima aventura!</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <h5 class="mb-3">Formas de Pagamento</h5>
+          <img src="imagens/formas_de_pagamento.png" alt="Formas de Pagamento" class="img-fluid">
+        </div>
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <h5 class="mb-3">Redes Sociais</h5>
+          <img src="imagens/instagram.png" alt="Instagram" class="img-fluid">
+          <img src="imagens/facebook.png" alt="Facebook" class="img-fluid">
+          <img src="imagens/x.png" alt="Twitter" class="img-fluid">
+          <img src="imagens/tiktok.png" alt="TikTok" class="img-fluid">
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <hr class="mb-3">
+          <p class="small mb-0">&copy; 2024 Nuvem Viagens. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

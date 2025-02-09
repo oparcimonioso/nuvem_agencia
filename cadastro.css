@@ -1,0 +1,76 @@
+/* =========================
+   Navbar Responsivo
+   ========================= */
+   .navbar {
+    background-color: #000080 !important;
+}
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white !important;
+}
+.navbar .btn-custom {
+    color: white !important;
+    background: none !important;
+    border: none !important;
+    display: flex;
+    align-items: center;
+}
+.navbar .btn-custom img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+.navbar .btn-custom:hover {
+    color: #f8f9fa !important;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-item {
+        margin-bottom: 10px;
+    }
+}
+
+.navbar .navbar-nav {
+    flex-wrap: wrap;
+}
+
+/* =========================
+   Outros Estilos
+   ========================= */
+.password-match-feedback {
+    font-size: 0.875em;
+    display: none;
+}
+
+.form-container {
+    background: #e9ecef; /* Cinza claro */
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    margin: 2rem 0; /* Espaçamento vertical */
+}
+
+.btn-primary {
+    background-color: #000080 !important;
+    border-color: #000080 !important;
+}
+
+/* Garantir que o body ocupe a altura total e que o footer permaneça no final */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-fluid {
+    flex: 1;
+    padding: 20px;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #000080;
+    color: white;
+    padding: 2rem 0;
+}

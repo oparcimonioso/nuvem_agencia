@@ -1,0 +1,72 @@
+.navbar {
+    background-color: #000080 !important;
+}
+.navbar .nav-link, .navbar .navbar-brand {
+    color: white !important;
+}
+.navbar .btn-custom {
+    color: white !important;
+    background: none !important;
+    border: none !important;
+    display: flex;
+    align-items: center;
+}
+.navbar .btn-custom img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+.navbar .btn-custom:hover {
+    color: #f8f9fa !important;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-item {
+        margin-bottom: 10px;
+    }
+}
+
+.navbar .navbar-nav {
+    flex-wrap: wrap;
+}
+
+/* Estilização da caixa de login para utilizar a cor do navbar (bg-primary) */
+.login-box {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    color: #fff;
+  }
+  
+  /* Ajusta o fundo dos inputs para manter boa legibilidade */
+  .login-box .form-control {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  /* Define a cor dos links dentro da caixa de login */
+  .login-box a {
+    color: #ffc107;
+  }
+  
+
+/* Footer */
+
+footer {
+    background-color: #ffffff !important; /* Mesma cor do header */
+    margin-top: auto; /* Para fixar no fundo se necessário */
+}
+
+/* Estilização dos ícones */
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: white !important;
+}
+
+/* Ajuste dos ícones de pagamento */
+footer img {
+    transition: transform 0.3s ease;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agência de Viagens</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu Responsivo com cor de fundo e textos adequados -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Nuvem</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <!-- Removido href duplicado -->
+            <a class="btn btn-custom" href="login.html">
+              <img src="imagens/icons8-male-user-48.png" alt="Ícone de usuário"> Entre ou Cadastre-se
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Seção de Login -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <!-- Caixa de login estilizada via CSS (classe .login-box definida em style.css) -->
+        <div>
+          <h2 class="text-center mb-4">Login</h2>
+          <form id="loginForm">
+            <!-- Campo de E-mail -->
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <!-- Campo de Senha -->
+            <div class="mb-4">
+              <label for="password" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="password" required>
+            </div>
+            <!-- Botão de Login -->
+            <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+            <!-- Link de Cadastro -->
+            <div class="text-center">
+              <small>
+                Ainda não está cadastrado? 
+                <a href="cadastro.html" class="text-decoration-none">Cadastre-se aqui</a>
+              </small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <!-- Seção Sobre -->
+        <div class="col-12 col-md-4 text-center text-md-start">
+          <h5 class="mb-3">Nuvem Viagens</h5>
+          <p class="small">Sua agência especializada em destinos nordestinos. Economize até 40% na sua próxima aventura!</p>
+        </div>
+        <!-- Seção Formas de Pagamento -->
+        <div class="col-12 col-md-4 text-center">
+          <h5 class="mb-3">Formas de Pagamento</h5>
+          <img src="imagens/formas_de_pagamento.png" alt="Formas de Pagamento" class="img-fluid">
+        </div>
+        <!-- Seção Redes Sociais -->
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <h5 class="mb-3">Redes Sociais</h5>
+          <img src="imagens/instagram.png" alt="Instagram" class="img-fluid">
+          <img src="imagens/facebook.png" alt="Facebook" class="img-fluid">
+          <img src="imagens/x.png" alt="Twitter" class="img-fluid">
+          <img src="imagens/tiktok.png" alt="TikTok" class="img-fluid">
+        </div>
+      </div>
+      <!-- Direitos autorais -->
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <hr class="mb-3">
+          <p class="small mb-0">&copy; 2024 Nuvem Viagens. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

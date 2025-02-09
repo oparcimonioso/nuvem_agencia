@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agência de Viagens - Criar Conta</title>
+  <!-- Bootstrap 5.3.0 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS Externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho com o menu de navegação -->
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Nuvem</a>
+        <button class="navbar-toggler" type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <!-- Removido o atributo duplicado "href". -->
+              <a href="login.html" class="btn btn-custom">
+                <img src="imagens/icons8-male-user-48.png" alt="Ícone de usuário"> Entre ou Cadastre-se
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal da página -->
+  <main class="container-fluid mt-4">
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="form-container p-4">
+          <h2 class="text-center mb-4">Criar Nova Conta</h2>
+          <form id="registrationForm" novalidate>
+            <!-- Campo: Nome Completo -->
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Nome Completo</label>
+              <input type="text" class="form-control" id="fullName" required>
+              <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+            </div>
+
+            <!-- Linha 1: CPF e Data de Nascimento -->
+            <div class="row g-3">
+              <div class="col-md-6 mb-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" 
+                       pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+                <div class="invalid-feedback">Formato inválido (use 000.000.000-00)</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="birthdate" class="form-label">Data de Nascimento</label>
+                <input type="date" class="form-control" id="birthdate" required>
+                <div class="invalid-feedback">Data obrigatória</div>
+              </div>
+            </div>
+
+            <!-- Linha 2: Sexo e E-mail -->
+            <div class="row g-3">
+              <div class="col-md-6 mb-3">
+                <label for="gender" class="form-label">Sexo</label>
+                <select class="form-select" id="gender" required>
+                  <option value="">Selecione...</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="feminino">Feminino</option>
+                  <option value="nao-binario">Não Binário</option>
+                </select>
+                <div class="invalid-feedback">Selecione uma opção</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" required>
+                <div class="invalid-feedback">E-mail inválido</div>
+              </div>
+            </div>
+
+            <!-- Linha 3: Senhas -->
+            <div class="row g-3">
+              <div class="col-md-6 mb-3">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="password" minlength="6" required>
+                <div class="invalid-feedback">Mínimo 6 caracteres</div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="confirmPassword" class="form-label">Repetir Senha</label>
+                <input type="password" class="form-control" id="confirmPassword" required>
+                <div class="invalid-feedback">Senhas não coincidem</div>
+              </div>
+            </div>
+
+            <!-- Botão de Envio -->
+            <button type="submit" class="btn btn-primary w-100">Criar Conta</button>
+          </form>
+
+          <!-- Mensagem de Sucesso (inicialmente oculta) -->
+          <div class="alert alert-success mt-3 d-none" id="successMessage">
+            Cadastro realizado com sucesso!
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Seção Sobre -->
+        <div class="col-12 col-md-4 text-center text-md-start">
+          <h5 class="mb-3">Nuvem Viagens</h5>
+          <p class="small">Sua agência especializada em destinos nordestinos. Economize até 40% na sua próxima aventura!</p>
+        </div>
+        <!-- Seção Pagamentos -->
+        <div class="col-12 col-md-4 text-center">
+          <h5 class="mb-3">Formas de Pagamento</h5>
+          <img src="imagens/formas_de_pagamento.png" alt="Formas de Pagamento" class="img-fluid">
+        </div>
+        <!-- Seção Redes Sociais -->
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <h5 class="mb-3">Redes Sociais</h5>
+          <img src="imagens/instagram.png" alt="Instagram" class="img-fluid">
+          <img src="imagens/facebook.png" alt="Facebook" class="img-fluid">
+          <img src="imagens/x.png" alt="Twitter" class="img-fluid">
+          <img src="imagens/tiktok.png" alt="WhatsApp" class="img-fluid">
+        </div>
+      </div>
+      <!-- Direitos Autorais -->
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <hr class="mb-3">
+          <p class="small mb-0">&copy; 2024 Nuvem Viagens. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3.0 JS Bundle (inclui Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

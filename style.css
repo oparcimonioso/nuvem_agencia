@@ -1,0 +1,115 @@
+/* ===============================
+   Estilos da Navbar e Botões
+   =============================== */
+
+/* Estilo da navbar */
+.navbar {
+    background-color: #000080 !important;
+  }
+  .navbar .nav-link,
+  .navbar .navbar-brand {
+    color: white !important;
+  }
+  /* Estilo específico para botões dentro da navbar */
+  .navbar .btn-custom {
+    color: white !important;
+    background: none !important;
+    border: none !important;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilo global para .btn-custom (aplicado em outros contextos, se necessário) */
+  .btn-custom {
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+  }
+  .btn-custom:hover {
+    background-color: #000080;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar .nav-item {
+      margin-bottom: 10px;
+    }
+  }
+  
+  .navbar .navbar-nav {
+    flex-wrap: wrap;
+  }
+  
+  /* ===============================
+     Estilos Gerais e de Seções
+     =============================== */
+  
+  /* Seção custom para fundo e espaçamento */
+  .custom-section {
+    background-color: #000080;
+    border-radius: 15px;
+    padding: 20px;
+  }
+  
+  /* ===============================
+     Estilos dos Cards
+     =============================== */
+  
+  /* Container para manter a proporção 3:4 nas imagens */
+  .card-img-container {
+    position: relative;
+    padding-top: 133.33%; /* Proporção 4/3 */
+    overflow: hidden;
+  }
+  
+  .card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Transição e hover para os cards */
+  .card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+    background-color: #fff;
+    border-radius: 0 0 15px 15px;
+  }
+  
+  .small {
+    font-size: 0.875em !important;
+  }
+  
+  /* Ajuste para as imagens do carrossel */
+  .carousel-item img {
+    object-fit: cover;
+  }
+  
+  /* ===============================
+     Estilos do Footer
+     =============================== */
+  
+  footer {
+    background-color: #ffffff !important;
+    margin-top: auto;
+  }
+  
+  footer img {
+    transition: transform 0.3s ease;
+  }
+  footer img:hover {
+    transform: scale(1.1);
+  }
+  
