@@ -1,0 +1,54 @@
+CREATE DATABASE agencianuvem;
+USE agencianuvem;
+
+-- Tabela Cliente
+CREATE TABLE cliente (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	nome_completo VARCHAR (100),
+    cpf CHAR(11) UNIQUE NOT NULL,
+    data_nascimento DATE,
+    email VARCHAR (100) UNIQUE NOT NULL,
+    senha VARCHAR (100) NOT NULL
+    );
+    
+CREATE TABLE Destino (
+    destino_ID INT PRIMARY KEY,
+    nome_destino VARCHAR(255) NOT NULL,
+    valor DECIMAL(10, 2) NOT NULL,
+    valor_promo DECIMAL(10, 2),
+    data_ida DATE NOT NULL,
+    data_volta DATE NOT NULL,
+    CONSTRAINT check_valor_promo 
+        CHECK (
+            valor_promo IS NULL OR 
+            (valor_promo < valor) -- Garante que a promoção seja menor que o valor normal
+        )
+);
+
+CREATE TABLE Compra (
+    compra_ID INT PRIMARY KEY,
+    valor_total DECIMAL(10, 2) NOT NULL,
+    forma_pagamento VARCHAR(50) NOT NULL,
+    data_compra DATE NOT NULL,
+    cliente_ID INT,
+    destino_ID INT,
+    FOREIGN KEY (cliente_ID) REFERENCES Cliente(id),
+    FOREIGN KEY (destino_ID) REFERENCES Destino(destino_ID)
+);
+
+-- Inserindo um cliente
+INSERT INTO cliente (nome_completo, cpf, data_nascimento, email, senha) 
+VALUES 
+('João Silva', '12345678901', '1990-05-15', 'joao.silva@email.com', 'senha123');
+
+-- Inserindo um destino
+INSERT INTO Destino (destino_ID, nome_destino, valor, valor_promo, data_ida, data_volta) 
+VALUES 
+(1, 'Rio de Janeiro', 1500.00, 1200.00, '2025-03-10', '2025-03-20');
+
+-- Inserindo uma compra
+INSERT INTO Compra (compra_ID, valor_total, forma_pagamento, data_compra, cliente_ID, destino_ID) 
+VALUES 
+(1, 1200.00, 'Cartão de Crédito', '2025-02-06', 1, 1);
+
+SELECT * FROM compra
